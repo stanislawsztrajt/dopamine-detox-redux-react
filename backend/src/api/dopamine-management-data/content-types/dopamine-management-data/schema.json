@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dopamine_management_datas",
+  "info": {
+    "singularName": "dopamine-management-data",
+    "pluralName": "dopamine-management-datas",
+    "displayName": "dopamine-management-data",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "typeOfDopamineManagement": {
+      "type": "string",
+      "maxLength": 10,
+      "required": false,
+      "default": "none"
+    },
+    "endsTime": {
+      "type": "datetime",
+      "required": false
+    },
+    "startTimeGlobalTimer": {
+      "type": "datetime",
+      "required": false
+    },
+    "startTimeCurrentTimer": {
+      "type": "datetime",
+      "required": false,
+      "default": "1969-12-31T23:00:00.000Z"
+    },
+    "reminderNotificationsEnabled": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "infoNotificationsEnabled": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "blockedApps": {
+      "type": "json",
+      "required": false
+    },
+    "notifications": {
+      "type": "json",
+      "required": false
+    },
+    "daysOfManagement": {
+      "type": "integer",
+      "default": 0,
+      "required": false,
+      "max": 21,
+      "min": 0
+    }
+  }
+}

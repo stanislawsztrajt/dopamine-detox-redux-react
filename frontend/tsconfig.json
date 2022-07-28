@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "CommonJS",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "rootDir": ".",
+    "outDir": "dist",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "baseUrl": "."
+  },
+  "include": ["./src/**/*", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "build"]
+}

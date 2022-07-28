@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-stone-700;
+}
+
+body {
+  background-color: #f1eee8;
+  /* background-color: #f5eddc; */
+  color: #000000;
+}
+
+.timerBlock {
+  @apply flex flex-col justify-between gap-4 p-4 bg-white rounded-md shadow-lg w-80 h-36;
+}
