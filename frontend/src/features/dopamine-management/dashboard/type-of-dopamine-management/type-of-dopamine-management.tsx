@@ -1,10 +1,10 @@
-import React, { VFC } from "react";
+import React, { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTree } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
-import { getTypeOfDopamineManagement } from "src/features/dopamine-management/dopamine-management-slice";
+import { getTypeOfDopamineManagement } from "src/features/dopamine-management/slice/dopamine-management-slice";
 
-const TypeOfDopamineManagement: VFC = () => {
+const TypeOfDopamineManagement: FC = () => {
   const typeOfDopamineManagement = useSelector(getTypeOfDopamineManagement);
 
   return (

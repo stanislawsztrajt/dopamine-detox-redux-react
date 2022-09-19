@@ -4,11 +4,11 @@ import {
   getDaysOfManagement,
   getEndsTime,
   getStartCurrentTime,
-} from "src/features/dopamine-management/dopamine-management-slice";
+} from "src/features/dopamine-management/slice/dopamine-management-slice";
 import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import dopamineInfos from "src/data/dopamine-infos.json";
+import dopamineInfos from "src/utils/data/dopamine-infos.json";
 
 const ProgressInformation: FC = () => {
   const endsTime = useSelector(getEndsTime);

@@ -1,5 +1,5 @@
 import * as Yup from "yup";
-import { IsignUp, IsignUpValues, IsignUpVariables, Iuser } from "src/types/interfaces";
+import { IsignUp, IsignUpValues, IsignUpVariables, Iuser } from "src/utils/types/interfaces";
 import { SIGN_UP } from "src/api/queries/user/mutations";
 import { useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";

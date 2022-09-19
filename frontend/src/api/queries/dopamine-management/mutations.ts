@@ -22,3 +22,26 @@ export const CREATE_DOPAMINE_MANAGEMENT = gql`
     }
   }
 `;
+
+export const UPDATE_DOPAMINE_MANAGEMENT = gql`
+  mutation ($id: ID!, $data: JSON!) {
+    updateDopamineManagementData(id: $id, data: $data) {
+      data {
+        id
+        attributes {
+          typeOfDopamineManagement
+          endsTime
+          startTimeGlobalTimer
+          startTimeCurrentTimer
+          reminderNotificationsEnabled
+          infoNotificationsEnabled
+          blockedApps
+          notifications
+          daysOfManagement
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  }
+`;

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 
 import { useSelector } from "react-redux";
-import { getNotifications } from "src/features/dopamine-management/dopamine-management-slice";
+import { getNotifications } from "src/features/dopamine-management/slice/dopamine-management-slice";
 
 const LastNotifications: FC = () => {
   const notifications = useSelector(getNotifications);

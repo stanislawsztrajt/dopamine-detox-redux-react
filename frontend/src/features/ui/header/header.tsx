@@ -2,7 +2,7 @@ import React, { VFC } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBrain } from "@fortawesome/free-solid-svg-icons";
-import { jwt } from "src/constants";
+import { jwt } from "src/utils/constants";
 
 const Header: VFC = () => {
   return (
@@ -17,7 +17,7 @@ const Header: VFC = () => {
               className="w-6 h-6 p-2 text-white bg-blue-600 rounded-full"
               icon={faBrain}
             />
-            <span className="ml-2 text-xl text-black hidden sm:block">dopamine manager</span>
+            <span className="hidden ml-2 text-xl text-black sm:block">dopamine manager</span>
           </Link>
         </div>
 

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { milisecondsToTimer } from "src/helpers";
-import { getDateNow } from "src/features/dopamine-management/dopamine-management-slice";
+import { milisecondsToTimer } from "src/utils/helpers";
+import { getDateNow } from "src/features/dopamine-management/slice/dopamine-management-slice";
 
 const useTimer = (time: Date) => {
   const dateNow = useSelector(getDateNow);

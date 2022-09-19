@@ -6,12 +6,9 @@ import aos from "aos";
 import "aos/dist/aos.css";
 import client from "src/api/gql-client";
 
-import Home from "src/pages";
-import Dashboard from "src/pages/dashboard";
-import Settings from "src/pages/settings";
 import { DashboardLayout, AuthLayout } from "src/features/ui";
 import { Login, SignUp } from "src/pages/authorization";
-import StartDopamineManagement from "src/pages/start-dopamine-management";
+import { Home, Dashboard, Settings, StartDopamineManagement } from "./pages";
 
 Notification.requestPermission();
 

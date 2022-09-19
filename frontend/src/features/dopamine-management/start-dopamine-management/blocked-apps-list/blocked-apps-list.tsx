@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Field } from "formik";
 import React, { FC } from "react";
-import { blockedApps } from "src/data/blocked-apps";
+import { blockedApps } from "src/utils/data/blocked-apps";
 
 const BlockedAppsList: FC = () => {
   return (

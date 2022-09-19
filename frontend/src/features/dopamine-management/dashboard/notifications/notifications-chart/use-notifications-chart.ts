@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { getNotifications } from "src/features/dopamine-management/dopamine-management-slice";
+import { getNotifications } from "src/features/dopamine-management/slice/dopamine-management-slice";
 import {
   Chart as ChartJS,
   CategoryScale,

@@ -3,12 +3,9 @@ import UndrawNature from "src/images/undraw_nature.svg";
 import { Field, Form, Formik } from "formik";
 import useLogin from "./use-login";
 import { Loading } from "src/features/ui";
-import { checkIsUserLoggedIn } from "src/helpers";
 import { Link } from "react-router-dom";
 
 const Login: FC = () => {
-  checkIsUserLoggedIn();
-
   const { initialValues, loginSchema, login, error, loading } = useLogin();
 
   return (
@@ -21,7 +18,7 @@ const Login: FC = () => {
         </div>
       </Link>
       {loading ? (
-        <div className="p-8 lg:py-16 px-24 lg:px-40">
+        <div className="p-8 px-24 lg:py-16 lg:px-40">
           <Loading status={null} />
         </div>
       ) : (
@@ -29,7 +26,7 @@ const Login: FC = () => {
           <Form>
             <p className="mb-4">Please login to your account</p>
             <div className="mb-4">
-              {error && <div className="text-red-500 font-thin text-sm">{error}</div>}
+              {error && <div className="text-sm font-thin text-red-500">{error}</div>}
               <Field
                 type="email"
                 className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"

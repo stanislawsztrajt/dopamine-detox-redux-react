@@ -1,5 +1,5 @@
 import * as Yup from "yup";
-import { IstartDopamineManagement } from "src/types/interfaces";
+import { IstartDopamineManagement } from "src/utils/types/interfaces";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -32,9 +32,8 @@ const useStartDopamineManagement = () => {
   const [error, setError] = useState<string | undefined>();
 
   const startDopamineManagement = (dopamineManagement: IstartDopamineManagement) => {
-    const data = dopamineManagement;
+    // const data = dopamineManagement;
     // to change notifications from yes/no to true/false ends time += daysOfManagement
-
     console.log(dopamineManagement);
   };
 

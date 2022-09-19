@@ -8,7 +8,7 @@ import {
   getStatus,
   getEndsTime,
   checkNotifications,
-} from "src/features/dopamine-management/dopamine-management-slice";
+} from "src/features/dopamine-management/slice/dopamine-management-slice";
 
 const useDashborad = () => {
   const typeOfDopamineManagement = useSelector(getTypeOfDopamineManagement);

@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "src/api/queries/user/mutations";
-import { IloginValues, Iuser } from "src/types/interfaces";
+import { IloginValues, Iuser } from "src/utils/types/interfaces";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

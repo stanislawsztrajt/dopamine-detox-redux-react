@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { store } from "src/app/store";
-import { fetchDopamineManagementData } from "./features/dopamine-management/dopamine-management-slice";
+import { fetchDopamineManagementData } from "src/features/dopamine-management/slice/thunks";
 
 store.dispatch(fetchDopamineManagementData());
 

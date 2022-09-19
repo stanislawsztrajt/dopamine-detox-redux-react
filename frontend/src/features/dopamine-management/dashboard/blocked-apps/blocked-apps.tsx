@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
 
-import { blockedApps } from "src/data/blocked-apps";
-import { getBlockedApps } from "src/features/dopamine-management/dopamine-management-slice";
+import { blockedApps } from "src/utils/data/blocked-apps";
+import { getBlockedApps } from "src/features/dopamine-management/slice/dopamine-management-slice";
 
 const BlockedApps: FC = () => {
   const blockedAppsState = useSelector(getBlockedApps);

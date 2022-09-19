@@ -8,7 +8,7 @@ import {
   getStartGlobalTime,
   getStartCurrentTime,
   getEndsTime,
-} from "src/features/dopamine-management/dopamine-management-slice";
+} from "src/features/dopamine-management/slice/dopamine-management-slice";
 
 const TimersSection: FC = () => {
   const globalTime = useSelector(getStartGlobalTime);

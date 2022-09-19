@@ -1,4 +1,4 @@
-import { Iuser } from "src/types/interfaces";
+import { Iuser } from "src/utils/types/interfaces";
 
 export const strongTextColor = "#EB1D36";
 

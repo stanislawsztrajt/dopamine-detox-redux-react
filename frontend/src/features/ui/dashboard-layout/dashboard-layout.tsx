@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 // import Footer from "../footer";
 import Sidebar from "../sidebar";
-import type { FCC } from "src/types/types";
+import type { FCC } from "src/utils/types/types";
 
 interface Props {
   children: ReactNode;

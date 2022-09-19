@@ -1,4 +1,4 @@
-import { jwt } from "src/constants";
+import { jwt } from "src/utils/constants";
 
 export const milisecondsToTimer = (ms: number) => {
   const days = Math.floor(ms / (24 * 60 * 60 * 1000));

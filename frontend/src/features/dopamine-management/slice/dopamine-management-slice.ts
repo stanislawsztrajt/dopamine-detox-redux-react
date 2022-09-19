@@ -1,43 +1,14 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "src/app/store";
-import { IdopamineManagementState } from "src/types/interfaces";
-import axios from "axios";
-import dopamineInfos from "src/data/dopamine-infos.json";
 
-const initialState: IdopamineManagementState = {
-  startTimeCurrentTimer: new Date(), // start after each dopamine management and reset after dopamine management ends
-  startTimeGlobalTimer: new Date(), // start after first dopamine management
-  endsTime: new Date(),
-  dateNow: Date.now(),
-  daysOfManagement: 7,
+import dopamineInfos from "src/utils/data/dopamine-infos.json";
 
-  typeOfDopamineManagement: "detox",
-
-  reminderNotificationsEnabled: false,
-  infoNotificationsEnabled: false,
-  notifications: [{ notification: "", date: "" }],
-
-  // limit state
-  blockedApps: [],
-
-  status: "idle",
-  error: false,
-};
-
-export const fetchDopamineManagementData = createAsyncThunk<{
-  data: {
-    attributes: IdopamineManagementState;
-  };
-}>("api/dopamine-management-data", async () => {
-  const { data } = await axios.get(
-    `${process.env.REACT_APP_API_URL}/api/dopamine-management-datas/1`
-  );
-  return data;
-});
+import dopamineInitialState from "./dopamine-initial-state";
+import fetchDopamineManagementData from "./thunks";
 
 const dopamineManagementSlice = createSlice({
   name: "dopamineManagement",
-  initialState,
+  initialState: dopamineInitialState,
   reducers: {
     decrementGlobalTimer: (state) => {
       state.startTimeGlobalTimer = new Date(Number(state.startTimeGlobalTimer) - 1000);
@@ -62,24 +33,18 @@ const dopamineManagementSlice = createSlice({
       // reminder about blocking apps
       const dateNowHours: number = dateNow.getHours();
       const isMinutesSecondsEqualZero = dateNow.getMinutes() === 0 && dateNow.getSeconds() === 0;
+      const hours = [7, 9, 12, 14, 16, 18, 20, 22, 24] as const;
 
-      if (
-        //              hours
-        (dateNowHours === 7 && isMinutesSecondsEqualZero) ||
-        (dateNowHours === 9 && isMinutesSecondsEqualZero) ||
-        (dateNowHours === 12 && isMinutesSecondsEqualZero) ||
-        (dateNowHours === 14 && isMinutesSecondsEqualZero) ||
-        (dateNowHours === 16 && isMinutesSecondsEqualZero) ||
-        (dateNowHours === 18 && isMinutesSecondsEqualZero) ||
-        (dateNowHours === 20 && isMinutesSecondsEqualZero) ||
-        (dateNowHours === 22 && isMinutesSecondsEqualZero) ||
-        (dateNowHours === 24 && isMinutesSecondsEqualZero)
-      ) {
-        const randomBlockedAppIndex: number = Math.floor(Math.random() * state.blockedApps.length);
-        new Notification(
-          `Don't forgot about blocked apps! Eg: ${state.blockedApps[randomBlockedAppIndex]}`
-        );
-      }
+      hours.forEach((hour) => {
+        if (dateNowHours === hour && isMinutesSecondsEqualZero) {
+          const randomBlockedAppIndex: number = Math.floor(
+            Math.random() * state.blockedApps.length
+          );
+          new Notification(
+            `Don't forgot about blocked apps! Eg: ${state.blockedApps[randomBlockedAppIndex]}`
+          );
+        }
+      });
 
       if (dateNowHours === state.endsTime.getHours() && isMinutesSecondsEqualZero) {
         // add automatic adding notifications to data base whenever used
@@ -127,6 +92,7 @@ const dopamineManagementSlice = createSlice({
         state.infoNotificationsEnabled = infoNotificationsEnabled;
         state.notifications = notifications;
         state.blockedApps = blockedApps;
+
         state.status = "succeeded";
       })
       .addCase(fetchDopamineManagementData.rejected, (state) => {

@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { Field, Form, Formik } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { checkIsUserNotLoggedIn } from "src/helpers";
 import useStartDopamineManagement from "./use-start-dopamine-management";
 
 import "./start-dopamine-management.css";
@@ -16,8 +15,6 @@ import {
 } from "src/features/dopamine-management/start-dopamine-management";
 
 const StartDopamineManagement: FC = () => {
-  // checkIsUserNotLoggedIn()
-
   const { initialValues, startDopamineManagementSchema, startDopamineManagement, loading } =
     useStartDopamineManagement();
 

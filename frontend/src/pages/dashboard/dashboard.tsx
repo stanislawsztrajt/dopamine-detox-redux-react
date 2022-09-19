@@ -10,12 +10,9 @@ import {
   NotificationsChart,
 } from "src/features/dopamine-management/dashboard/notifications";
 import { Loading } from "src/features/ui";
-import { checkIsUserNotLoggedIn } from "./../../helpers/index";
 import useDashborad from "./use-dashboard";
 
 const Dashboard: FC = () => {
-  checkIsUserNotLoggedIn();
-
   const { status } = useDashborad();
 
   return (
